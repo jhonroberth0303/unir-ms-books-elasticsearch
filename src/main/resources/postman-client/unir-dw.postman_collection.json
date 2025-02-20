@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "dc2055bf-dc10-4628-9d0e-62b3feebc72a",
+		"name": "UNIR-DW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1131914"
+	},
+	"item": [
+		{
+			"name": "getBooksAPiGateway",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/v1/books",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksDetailApiGateway",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/v1/books/41",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"v1",
+						"books",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksDetail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:58614/v1/books/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "58614",
+					"path": [
+						"v1",
+						"books",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searcBooksApiGateway",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/v1/books/search?isbn=1",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"v1",
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Love-in-the-Time-of-Cholera",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "Gabriel-García-Márquez",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "1985",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "Romance",
+							"disabled": true
+						},
+						{
+							"key": "isbn",
+							"value": "1"
+						},
+						{
+							"key": "score",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBooks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Great Gatsby Jul\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"genre\": \"Fiction\",\r\n    \"editorial\": \"Scribner\",\r\n    \"language\": \"English\",\r\n    \"pages\": 180,\r\n    \"year\": 1925,\r\n    \"description\": \"A novel set in the Jazz Age\",\r\n    \"price\": 10.99,\r\n    \"image\": null,\r\n    \"createAt\": \"2023-10-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/v1/books",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBooks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Great Gatsby jhonro\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"genre\": \"Fiction\",\r\n    \"editorial\": \"Scribner\",\r\n    \"language\": \"English\",\r\n    \"pages\": 180,\r\n    \"year\": 1925,\r\n    \"description\": \"A novel set in the Jazz Age\",\r\n    \"price\": 10.99,\r\n    \"image\": null,\r\n    \"createAt\": \"2023-10-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/v1/books/48",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"v1",
+						"books",
+						"48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editBooks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Love in the Time of Cholera Juli\",\r\n    \"author\": \"Gabriel García Márquez\",\r\n    \"genre\": \"Romance\",\r\n    \"editorial\": \"Alfred A. Knopf\",\r\n    \"language\": \"English\",\r\n    \"pages\": 348,\r\n    \"year\": 1985,\r\n    \"description\": \"A novel about love and aging\",\r\n    \"price\": 45.99,\r\n    \"image\": null,\r\n    \"createAt\": \"2023-11-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/v1/books/41",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"v1",
+						"books",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apigateway}}api/ms-books-catalogue/api-docs",
+					"host": [
+						"{{apigateway}}api"
+					],
+					"path": [
+						"ms-books-catalogue",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
